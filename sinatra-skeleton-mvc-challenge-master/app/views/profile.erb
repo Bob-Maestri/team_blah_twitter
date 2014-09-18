@@ -1,0 +1,37 @@
+
+<div class="name_box">
+
+  <h2><%= @user.full_name %></h2>
+
+</div>
+
+<div class="followee_column">
+  <p>Your Blah Listeners</p>
+  <% if @user.followees %>
+    <% @user.followees.each do |followee| %>
+      <p><a href="/profile/<%= followee.id %>"><%= followee.full_name %></a></p>
+    <% end %>
+  <% end %>
+</div>
+
+ <div class="blah_feed">
+  <p>
+    <h3>My Blahbity Blahs</h3>
+    <% if @user.blahs %>
+      <% @user.blahs.each do |blah| %>
+        <%= blah.content %>
+      <% end %>
+    <% end %>
+  </p>
+</div>
+
+<div class="right_column">
+  <p>Who You Can Follow</p>
+  <% if @all_users %>
+    <% @all_users.each do |user| %>
+      <p><a href="/profile/<%= user.id %>"><%= user.full_name %></a>
+      </p>
+    <% end %>
+  <% end %>
+
+</div>
