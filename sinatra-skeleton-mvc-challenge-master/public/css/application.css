@@ -52,8 +52,9 @@ div h1 {
 }
 
 .signup input[type="text"] {
-  border: 1px solid black;
+  border: 4px solid #D4E6E6;
   margin: 5px;
+  border-radius: 5px;
 }
 
 .login input[type="submit"] {
@@ -63,11 +64,13 @@ div h1 {
 }
 
 .login input[type="text"] {
-  border: 1px solid black;
+  border: 4px solid #D4E6E6;
   margin: 5px;
+  border-radius: 5px;
 }
 
 .input_wrapper{
 text-align: center;
 margin-top: 5%;
+background-color: #00A6CF;
 }
