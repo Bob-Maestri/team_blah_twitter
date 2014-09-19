@@ -36,10 +36,11 @@
 
  <div class="blah_feed">
   <p>
-    <h3>My Blahbity Blahs</h3>
+    <h3>My Blah Wall...</h3>
     <% if @user.blahs %>
       <% @user.blahs.each do |blah| %>
-        <%= blah.content %><br><br>
+        <%= blah.content %><br>
+        <p>posted by <%= @user.full_name %> at <%= blah.created_at %></p>
       <% end %>
     <% end %>
   </p>
