@@ -1,9 +1,12 @@
+
 <div class="name_box">
 
 
   <h2><%= @user.full_name %></h2>
 
+
 </div>
+
 
 <% if session[:user_id] == @user.id %>
   <div class="container">
@@ -16,7 +19,9 @@
 <% end %>
 
 <div class="followee_column">
-    <p>About Me</p><br><br>
+    <p>About Me</p>
+    <img src=<%= @image_src %>>
+    <br><br>
     <p>
       <%= @user.about_me %>
     </p>
