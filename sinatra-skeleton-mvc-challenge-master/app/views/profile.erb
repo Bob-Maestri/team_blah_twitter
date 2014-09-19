@@ -10,28 +10,22 @@
 
   <% if session[:user_id] == @user.id %>
     <div class="container">
-      <form action="/profile/new_blah/<%= @user.id %>" method="post">
-        <input type="text" name="content" placeholder="Blahbity Blahbity!">
-        <input type="submit" value="Blah">
-      </form>
+      <%= erb :blah_input %>
     </div>
   <% end %>
 
   <div class="followee_column">
       <p>About Me</p>
-      <img src= <%=@image_src%>><br><br>
+      <img src=<%="#{@image_src}" << "?d=http://i.imgur.com/tlOPBv9.jpg" << "?s=120"%>><br><br>
       <p>
         <%= @user.about_me %>
       </p>
     <br><br>
     <% if session[:user_id] == @user.id %>
-      <p>Edit About Me</p><br><br>
-      <p>
-        <form action="/profile/<%= @user.id %>/edit" method="post">
-          <input type="text" name="about_me" placeholder="Edit About Me"><br>
-          <input type="submit" value="Edit">
-        </form>
-      </p>
+      <form action="/profile/<%= @user.id %>/edit" method="post">
+        <input type="text" name="about_me" placeholder="Edit About Me"><br>
+        <input type="submit" value="Edit">
+      </form>
     <% end %>
   </div>
 
@@ -39,7 +33,7 @@
 
    <div class="blah_feed">
     <p>
-      <h3>My Blah Wall...</h3>
+      <h3>Blah Wall...</h3>
       <% if @user.blahs %>
         <% @user.blahs.order(created_at: :desc).each do |blah| %>
           <%= blah.content %><br>

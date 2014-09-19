@@ -11,19 +11,18 @@
   </div>
 
   <div class="container">
-    <form action="/dashboard/<%=@user.id%>/blah" method="post">
-      <input type="text" name="content" placeholder="Blah blah blah...">
-      <input type="submit" value="Blah this!">
-    </form>
+    <%= erb :blah_input %>
   </div>
 
   <div class ="followee_column">
-    <% if @user.followees %>
+    <% if @followees %>
     <h2>Following...</h2>
-    <% @user.followees.each do |followee| %>
-    <p><a href="/profile/<%= followee.id %>"><%= followee.full_name %></a></p>
-        <form action="/dashboard/<%= @user.id %>/unfollow/<%= followee.id %>" method="post"><input type="submit" value="Unfollow Me!">
-      </form>
+    <% @followees.each do |followee| %>
+      <div class ="followee_box">
+      <p><a href="/profile/<%= followee.id %>"><%= followee.full_name %></a></p>
+          <form action="/dashboard/<%= @user.id %>/unfollow/<%= followee.id %>" method="post"><input type="submit" value="Unfollow Me!">
+        </form>
+      </div>
     <% end %>
     <% end %>
   </div>
@@ -31,20 +30,16 @@
   <div class ="blah_feed">
     <h2>Blah Wall...</h2>
     <% @sorted_blahs.each do |blah| %>
-      <p><%= blah.content %></p>
-      <% @blah_user = User.find(blah.user_id) %>
-      <p>posted by <%= @blah_user.full_name %> at <%= blah.created_at %></p>
+      <div class ="blah_post">
+        <p><%= blah.content %></p>
+        <% @blah_user = User.find(blah.user_id) %>
+        <p>posted by <%= @blah_user.full_name %> at <%= blah.created_at %></p>
+      </div>
     <% end %>
   </div>
 
   <div class ="right_column">
-    <h2>Who you can follow...</h2>
-    <% @other_users.each do |user| %>
-      <p><a href="/profile/<%= user.id %>"><%= user.full_name %></a></p>
-      <form action="/profile/<%= @user.id %>/follow/<%= user.id %>" method="post">
-        <input type="submit" value="Follow Me!">
-      </form>
-    <% end %>
+    <%= erb :potentialfollowee %>
   </div>
 
 </div>

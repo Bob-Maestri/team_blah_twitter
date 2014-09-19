@@ -5,7 +5,7 @@ get '/profile/:user_id' do
   @other_users = @all_users - @user.followees
   @email_address = @user[:email].downcase
   @hash = Digest::MD5.hexdigest(@email_address)
-  @image_src = "http://www.gravatar.com/avatar/#{@hash}?s=120"
+  @image_src = "http://www.gravatar.com/avatar/#{@hash}"
   erb :profile
 end
 
