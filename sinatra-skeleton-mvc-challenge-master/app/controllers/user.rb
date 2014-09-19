@@ -1,5 +1,5 @@
 get '/' do
-  erb :homepage
+  erb :homepage, layout: false
 end
 
 post '/' do
