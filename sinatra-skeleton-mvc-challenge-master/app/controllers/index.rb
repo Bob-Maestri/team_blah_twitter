@@ -28,13 +28,11 @@ post '/dashboard/:id/blah' do
   end
 end
 
-post '/profile/:user_id/follow/:other_id' do
-  if signed_in?
-    @user1 = User.find(params[:user_id])
-    @user2 = User.find(params[:other_id])
-    @user2.followers << @user1
-    redirect "/dashboard/#{@user1.id}"
-  end
+post '/dashboard/:user_id/follow/:other_id' do
+  @user1 = User.find(params[:user_id])
+  @user2 = User.find(params[:other_id])
+  @user2.followers << @user1
+  redirect "/dashboard/#{@user1.id}"
 end
 
 post '/dashboard/:user_id/unfollow/:other_id' do
