@@ -13,6 +13,25 @@
   </form>
 </div>
 
+<div class="followee_column">
+    <p>About Me</p><br><br>
+    <p>
+      <%= @user.about_me %>
+    </p>
+  <br><br>
+  <% if session[:user_id] == @user.id %>
+    <p>Edit About Me</p><br><br>
+    <p>
+      <form action="/profile/edit/<%= @user.id %>" method="post">
+        <input type="text" name="about_me" placeholder="Edit About Me"><br>
+        <input type="submit" value="Edit">
+      </form>
+    </p>
+  <% end %>
+</div>
+
+
+
  <div class="blah_feed">
   <p>
     <h3>My Blahbity Blahs</h3>

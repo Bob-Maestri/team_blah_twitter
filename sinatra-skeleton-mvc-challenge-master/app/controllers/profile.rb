@@ -12,6 +12,10 @@ post '/profile/:user_id/follow/:other_id' do
   redirect "/profile/#{@user1.id}"
 end
 
+post '/profile/edit/:user.id' do
+
+end
+
 post '/profile/:user_id/unfollow/:other_id' do
   @user = User.find(params[:user_id])
   @user.followees.delete(User.find(params[:other_id]))
