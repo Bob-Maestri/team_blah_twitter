@@ -43,6 +43,11 @@ a {
   z-index: -1;
 }
 
+.blah_post {
+  border-top: 1px solid black;
+  padding-top: 5px;
+}
+
 div img {
     display: block;
     margin-left: auto;
@@ -107,6 +112,13 @@ div h1 {
 
 
 .followee_column input[type="text"] {
+  border: 4px solid #D4E6E6;
+  margin: 5px;
+  border-radius: 5px;
+  width: 75%;
+}
+
+.right_column input[type="text"] {
   border: 4px solid #D4E6E6;
   margin: 5px;
   border-radius: 5px;
