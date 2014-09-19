@@ -13,19 +13,6 @@
   </form>
 </div>
 
-<div class="followee_column">
-  <p>Your Blah Listeners</p>
-  <% if @user.followees %>
-    <% @user.followees.each do |followee| %>
-      <p><a href="/profile/<%= followee.id %>"><%= followee.full_name %></a>
-        <form action="/profile/<%= @user.id %>/unfollow/<%= followee.id %>" method="post">
-          <input class="small_button" type="submit" value="unfollow">
-        </form>
-      </p>
-    <% end %>
-  <% end %>
-</div>
-
  <div class="blah_feed">
   <p>
     <h3>My Blahbity Blahs</h3>
