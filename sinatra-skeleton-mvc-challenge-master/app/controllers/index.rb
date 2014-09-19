@@ -10,7 +10,8 @@ get '/dashboard/:user_id' do
     end
   end
 
-  @sorted_blahs = @all_blahs.sort_by {|blah| blah.created_at }
+  @wall_blahs = @all_blahs.sort_by {|blah| blah.created_at }
+  @sorted_blahs = @wall_blahs.reverse
 
   @other_users = (User.all - @user.followees).sample(10)
 
