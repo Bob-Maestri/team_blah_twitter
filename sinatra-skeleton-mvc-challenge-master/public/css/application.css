@@ -6,6 +6,21 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: none;
+  color: blue;
+}
+
+.nav_bar a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav_bar a:hover {
+  text-decoration: none;
+  color: #00A6CF;
+}
+
 .nav_bar {
   margin-top: -15px;
   height: 6vh;
@@ -13,6 +28,8 @@ a {
   width: 100%;
   color: white;
   padding-top: 5px;
+  position: fixed;
+  top: 0px;
 }
 
 .logo {
