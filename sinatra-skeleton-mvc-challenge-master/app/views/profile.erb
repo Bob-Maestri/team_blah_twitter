@@ -19,7 +19,7 @@
 
   <div class="followee_column">
       <p>About Me</p>
-      <img src= <%=@image_src%>><br><br>
+      <img src=<%="#{@image_src}" << "?d=http://i.imgur.com/tlOPBv9.jpg" << "?s=120"%>><br><br>
       <p>
         <%= @user.about_me %>
       </p>
