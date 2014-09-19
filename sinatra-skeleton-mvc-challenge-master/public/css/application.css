@@ -2,11 +2,6 @@ form {
   text-align: center;
 }
 
-body {
-  background-image: url("http://i.imgur.com/i2I4LQh.jpg");
-  /*z-index: -1;*/
-}
-
 .nav_bar {
   margin-top: -15px;
   height: 6vh;
