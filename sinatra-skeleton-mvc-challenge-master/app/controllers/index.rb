@@ -24,7 +24,7 @@ post '/dashboard/:id/blah' do
   redirect "/dashboard/#{@user.id}"
 end
 
-post '/profile/:user_id/follow/:other_id' do
+post '/dashboard/:user_id/follow/:other_id' do
   @user1 = User.find(params[:user_id])
   @user2 = User.find(params[:other_id])
   @user2.followers << @user1

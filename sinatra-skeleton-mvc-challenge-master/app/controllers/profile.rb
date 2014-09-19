@@ -5,6 +5,13 @@ get '/profile/:user_id' do
   erb :profile
 end
 
+post '/profile/:user_id/follow/:other_id' do
+  @user1 = User.find(params[:user_id])
+  @user2 = User.find(params[:other_id])
+  @user2.followers << @user1
+  redirect "/profile/#{@user1.id}"
+end
+
 post '/profile/:user_id/unfollow/:other_id' do
   @user = User.find(params[:user_id])
   @user.followees.delete(User.find(params[:other_id]))
