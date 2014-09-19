@@ -1,7 +1,11 @@
-<div>
-  <p>Blahber</p>
-  <%= @user.full_name %>
-  <a href="/dashboard/<%= session[:user_id] %>">Dashboard</a>
-  <a href="/profile/<%= session[:user_id] %>">Profile</a>
-  <a href="/logout">Logout</a>
+<div class = "nav_bar">
+  <h3 class = "logo">
+    Blahber
+  </h3>
+  <div class = "user_name_navbar">
+    <%= @user.full_name %>
+  </div>
+    <a class = "dashboard_link" href="/dashboard/<%= session[:user_id] %>">Dashboard</a>
+    <a class = "profile_link" href="/profile/<%= session[:user_id] %>">Profile</a>
+    <a class = "logout_link" href="/logout">Logout</a>
 </div>

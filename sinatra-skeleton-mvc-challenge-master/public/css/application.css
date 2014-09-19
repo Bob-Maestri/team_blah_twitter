@@ -14,6 +14,25 @@ form {
 .logo {
   font-family: TOXIA;
   margin-left: 20px;
+  display: inline-block;
+}
+
+.user_name_navbar {
+  display: inline-block;
+  margin-left: 22%;
+  margin-right: 5%;
+}
+
+.dashboard_link {
+  margin-right: 5%;
+}
+
+.profile_link {
+  margin-right: 5%;
+}
+
+.logout_link {
+  margin-right: 5%;
 }
 
 .name_box {
@@ -92,6 +111,14 @@ div h1 {
   background-color: black;
   color: #00A6CF;
   border-radius: 5px;
+}
+
+
+.followee_column input[type="text"] {
+  border: 4px solid #D4E6E6;
+  margin: 5px;
+  border-radius: 5px;
+  width: 75%;
 }
 
 .followee_column img {
