@@ -5,37 +5,68 @@
 
 </div>
 
-<div class="container">
-  <p>Blah!</p>
-  <form action="/profile/new_blah/<%= @user.id %>" method="post">
-    <input type="text" name="content" placeholder="Blahbity Blahbity!"><br>
-    <input type="submit" value="Blah">
-  </form>
+<% if session[:user_id] == @user.id %>
+  <div class="container">
+    <p>Blah!</p>
+    <form action="/profile/new_blah/<%= @user.id %>" method="post">
+      <input type="text" name="content" placeholder="Blahbity Blahbity!">
+      <input type="submit" value="Blah">
+    </form>
+  </div>
+<% end %>
+
+<div class="followee_column">
+    <p>About Me</p><br><br>
+    <p>
+      <%= @user.about_me %>
+    </p>
+  <br><br>
+  <% if session[:user_id] == @user.id %>
+    <p>Edit About Me</p><br><br>
+    <p>
+      <form action="/profile/<%= @user.id %>/edit" method="post">
+        <input type="text" name="about_me" placeholder="Edit About Me"><br>
+        <input type="submit" value="Edit">
+      </form>
+    </p>
+  <% end %>
 </div>
+
+
 
  <div class="blah_feed">
   <p>
-    <h3>My Blahbity Blahs</h3>
+    <h3>My Blah Wall...</h3>
     <% if @user.blahs %>
       <% @user.blahs.each do |blah| %>
-        <%= blah.content %><br><br>
+        <%= blah.content %><br>
+        <p>posted by <%= @user.full_name %> at <%= blah.created_at %></p>
+        <% if session[:user_id] == @user.id %>
+          <p><a href="/profile/<%= blah.id %>/delete_blah">Delete</a></p>
+        <% end %>
       <% end %>
     <% end %>
   </p>
 </div>
 
-<div class="right_column">
-  <p>Other Blahbers</p>
-  <% if @other_users %>
-    <% @other_users.each do |user| %>
-      <p><a href="/profile/<%= user.id %>"><%= user.full_name %></a>
-        <form action="/profile/<%= @user.id %>/follow/<%= user.id %>" method="post">
-          <input class="small_button" type="submit" value="Follow Me!">
-        </form>
-      </p>
-    <% end %>
-  <% end %>
-</div>
+<% if session[:user_id] == @user.id %>
+  <div class="right_column">
+    <p>Other Blahbers</p>
+      <% @other_users.each do |user| %>
+        <p><a href="/profile/<%= user.id %>"><%= user.full_name %></a>
+          <form action="/profile/<%= @user.id %>/follow/<%= user.id %>" method="post">
+            <input class="small_button" type="submit" value="Follow Me!">
+          </form>
+        </p>
+      <% end %>
+  </div>
+<% end %>
+
 <div class="footer">
-  <a href="/dashboard/<%= @user.id %>"><%= @user.full_name %>'s Blahboard</a>
+  <a href="/dashboard/<%= @user.id %>"><%= @user.full_name %>'s Blahboard</a><br><br>
+  <% if session[:user_id] == @user.id %>
+    <a href="/logout">Logout</a>
+  <% else %>
+    <a href="/">Home</a>
+  <% end %>
 </div>
