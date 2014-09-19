@@ -1,0 +1,7 @@
+<div>
+  <p>Blahber</p>
+  <%= @user.full_name %>
+  <a href="/dashboard/<%= session[:user_id] %>">Dashboard</a>
+  <a href="/profile/<%= session[:user_id] %>">Profile</a>
+  <a href="/logout">Logout</a>
+</div>
