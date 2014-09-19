@@ -9,4 +9,3 @@ user2.blahs.create(content: "Hiyo")
 user3.blahs.create(content: "No")
 user4.blahs.create(content: "Howdy")
 user1.blahs.create(content: "THIS IS ABLAH")
-

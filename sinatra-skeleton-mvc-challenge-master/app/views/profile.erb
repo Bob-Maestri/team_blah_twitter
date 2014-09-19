@@ -1,15 +1,27 @@
-<div class="container">
-<!-- <div class="name_box"> -->
+<div class="name_box">
+
 
   <h2><%= @user.full_name %></h2>
 
+</div>
+
+<div class="container">
+  <p>Blah!</p>
+  <form action="/profile/new_blah/<%= @user.id %>" method="post">
+    <input type="text" name="content" placeholder="Blahbity Blahbity!"><br>
+    <input type="submit" value="Blah">
+  </form>
 </div>
 
 <div class="followee_column">
   <p>Your Blah Listeners</p>
   <% if @user.followees %>
     <% @user.followees.each do |followee| %>
-      <p><a href="/profile/<%= followee.id %>"><%= followee.full_name %></a></p>
+      <p><a href="/profile/<%= followee.id %>"><%= followee.full_name %></a>
+        <form action="/profile/<%= @user.id %>/unfollow/<%= followee.id %>" method="post">
+          <input class="small_button" type="submit" value="unfollow">
+        </form>
+      </p>
     <% end %>
   <% end %>
 </div>
@@ -19,20 +31,24 @@
     <h3>My Blahbity Blahs</h3>
     <% if @user.blahs %>
       <% @user.blahs.each do |blah| %>
-        <%= blah.content %>
+        <%= blah.content %><br><br>
       <% end %>
     <% end %>
   </p>
 </div>
 
 <div class="right_column">
-  <p>Who You Can Follow</p>
-  <% if @all_users %>
-    <% @all_users.each do |user| %>
+  <p>Other Blahbers</p>
+  <% if @other_users %>
+    <% @other_users.each do |user| %>
       <p><a href="/profile/<%= user.id %>"><%= user.full_name %></a>
+        <form action="/profile/<%= @user.id %>/follow/<%= user.id %>">
+          <input class="small_button" type="submit" value="Follow">
+        </form>
       </p>
     <% end %>
   <% end %>
-
-<!-- </div> -->
+</div>
+<div class="footer">
+  <a href="/dashboard/<%= @user.id %>"><%= @user.full_name %>'s Blahboard</a>
 </div>
