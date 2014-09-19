@@ -12,8 +12,11 @@ post '/profile/:user_id/follow/:other_id' do
   redirect "/profile/#{@user1.id}"
 end
 
-post '/profile/edit/:user.id' do
-
+post '/profile/:user_id/edit' do
+  @user = User.find(params[:user_id])
+  @user.about_me = params[:about_me]
+  @user.save
+  redirect "/profile/#{@user.id}"
 end
 
 post '/profile/:user_id/unfollow/:other_id' do
