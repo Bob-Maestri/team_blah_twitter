@@ -10,8 +10,10 @@ get '/dashboard/:user_id' do
     @user.followees.each do |follower|
       follower.blahs.each do |blah|
         @all_blahs << blah
+     end
     end
-end
+
+  p @search_results = User.where("full_name LIKE '#{params[:search]}'")
 
   @wall_blahs = @all_blahs.sort_by {|blah| blah.created_at }
   @sorted_blahs = @wall_blahs.reverse
@@ -45,5 +47,11 @@ post '/dashboard/:user_id/unfollow/:other_id' do
   end
 end
 
+post '/dashboard/:id/search' do
+  redirect "/dashboard/#{params[:id]}?search=#{params[:search]}"
+end
 
+post '/profile/:id/search' do
+  redirect "/profile/#{params[:id]}?search=#{params[:search]}"
+end
 
