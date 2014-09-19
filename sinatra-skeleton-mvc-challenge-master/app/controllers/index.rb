@@ -8,8 +8,8 @@ get '/dashboard/:user_id' do
     @user.followees.each do |follower|
       follower.blahs.each do |blah|
         @all_blahs << blah
-      end
     end
+end
 
   @wall_blahs = @all_blahs.sort_by {|blah| blah.created_at }
   @sorted_blahs = @wall_blahs.reverse
