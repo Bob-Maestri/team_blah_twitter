@@ -12,7 +12,8 @@ div img {
 div h4 {
     margin-left: auto;
     margin-right: auto;
-    width: 6em;
+    width: 50%;
+    /*width: 6em;*/
     margin-bottom: 0;
 }
 
@@ -20,27 +21,29 @@ div h1 {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    width: 6em;
+    /*width: 6em;*/
+    width: 100%;
     font-family: TOXIA;
     font-size: 8em;
     margin-bottom: 0;
+    text-shadow: 3px 3px purple;
 }
 
 .login {
   display: inline-block;
   text-align: center;
-  margin-right: 2em;
+  margin: 2em;
 }
 
 .signup {
   display: inline-block;
-  margin-left: 2em;
+  margin: 2em;
   /*text-align: center;*/
 }
 
 .signup input[type="submit"] {
-  background-color: teal;
-  color: white;
+  background-color: black;
+  color: #00A6CF;
   border-radius: 5px;
 }
 
@@ -50,8 +53,8 @@ div h1 {
 }
 
 .login input[type="submit"] {
-  background-color: teal;
-  color: white;
+  background-color: black;
+  color: #00A6CF;
   border-radius: 5px;
 }
 
