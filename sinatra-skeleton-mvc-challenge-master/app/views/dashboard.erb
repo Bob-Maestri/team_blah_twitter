@@ -1,40 +1,45 @@
-<div class="name_box">
-  <h2>Hi <%= @user.full_name %>!</h2>
-</div>
+<div class = "page_wrap">
 
-<div class="container">
-  <form action="/dashboard/<%=@user.id%>/blah" method="post">
-    <input type="text" name="content" placeholder="Blah blah blah...">
-    <input type="submit" value="Blah this!">
-  </form>
-</div>
+  <div class="name_box">
+    <h2>Hi <%= @user.full_name %>!</h2>
+  </div>
 
-
-<div class ="followee_column">
-  <% if @user.followees %>
-  <h2>Following...</h2>
-  <% @user.followees.each do |followee| %>
-  <p><a href="/profile/<%= followee.id %>"><%= followee.full_name %></a></p>
-      <form action="/dashboard/<%= @user.id %>/unfollow/<%= followee.id %>" method="post"><input type="submit" value="Unfollow Me!">
+  <div class="container">
+    <form action="/dashboard/<%=@user.id%>/blah" method="post">
+      <input type="text" name="content" placeholder="Blah blah blah...">
+      <input type="submit" value="Blah this!">
     </form>
-  <% end %>
-  <% end %>
-</div>
+  </div>
 
-<div class ="blah_feed">
-  <h2>Blah Wall...</h2>
-  <% @sorted_blahs.each do |blah| %>
-    <p><%= blah.content %></p>
-    <% @blah_user = User.find(blah.user_id) %>
-    <p>posted by <%= @blah_user.full_name %> at <%= blah.created_at %></p>
-  <% end %>
-</div>
 
-<div class ="right_column">
-  <h2>Who you can follow...</h2>
-  <% @other_users.each do |user| %>
-    <p><a href="/profile/<%= user.id %>"><%= user.full_name %></a></p>
-    <form action="/profile/<%= @user.id %>/follow/<%= user.id %>" method="post"><input type="submit" value="Follow Me!">
-    </form>
-  <% end %>
+  <div class ="followee_column">
+    <% if @user.followees %>
+    <h2>Following...</h2>
+    <% @user.followees.each do |followee| %>
+    <p><a href="/profile/<%= followee.id %>"><%= followee.full_name %></a></p>
+        <form action="/dashboard/<%= @user.id %>/unfollow/<%= followee.id %>" method="post"><input type="submit" value="Unfollow Me!">
+      </form>
+    <% end %>
+    <% end %>
+  </div>
+
+  <div class ="blah_feed">
+    <h2>Blah Wall...</h2>
+    <% @sorted_blahs.each do |blah| %>
+      <p><%= blah.content %></p>
+      <% @blah_user = User.find(blah.user_id) %>
+      <p>posted by <%= @blah_user.full_name %> at <%= blah.created_at %></p>
+    <% end %>
+  </div>
+
+  <div class ="right_column">
+    <h2>Who you can follow...</h2>
+    <% @other_users.each do |user| %>
+      <p><a href="/profile/<%= user.id %>"><%= user.full_name %></a></p>
+      <form action="/profile/<%= @user.id %>/follow/<%= user.id %>" method="post">
+        <input type="submit" value="Follow Me!">
+      </form>
+    <% end %>
+  </div>
+
 </div>
