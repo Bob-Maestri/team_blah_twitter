@@ -176,10 +176,11 @@ div h1 {
   text-align: center;
   border: 1px solid black;
   padding-bottom: 20px;
-  background-color: #00A6CF;
+  background-color: rgba(0,166,207,0.2);
   margin-top: 5%;
   margin-bottom: 5%;
   box-shadow: 10px 10px black;
+ /* opacity: 0.9;*/
 }
 
 .followee_column {
