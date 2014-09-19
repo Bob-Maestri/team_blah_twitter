@@ -11,7 +11,7 @@ get '/logout' do
 end
 
 post '/signup' do
-  @user = User.create(full_name: params[:full_name], password: params[:password])
+  @user = User.create(full_name: params[:full_name], password: params[:password], email: params[:email])
   session[:user_id] = @user.id
   @user.followees << @user
   redirect "/dashboard/#{@user.id}"

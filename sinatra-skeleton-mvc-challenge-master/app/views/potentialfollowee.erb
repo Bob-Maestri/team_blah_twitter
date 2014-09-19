@@ -1,0 +1,9 @@
+<div>
+  <h2>Who you can follow...</h2>
+    <% @other_users.each do |user| %>
+      <p><a href="/profile/<%= user.id %>"><%= user.full_name %></a></p>
+      <form action="/profile/<%= @user.id %>/follow/<%= user.id %>" method="post">
+        <input type="submit" value="Follow Me!">
+      </form>
+    <% end %>
+</div>

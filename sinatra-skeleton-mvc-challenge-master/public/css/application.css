@@ -87,6 +87,17 @@ div h1 {
   border-radius: 5px;
 }
 
+.right_column input[type="submit"] {
+  background-color: black;
+  color: #00A6CF;
+  border-radius: 5px;
+}
+
+.followee_column input[type="submit"] {
+  background-color: black;
+  color: #00A6CF;
+  border-radius: 5px;
+}
 .signup input[type="text"] {
   border: 4px solid #D4E6E6;
   margin: 5px;
@@ -145,6 +156,7 @@ div h1 {
 
 .followee_column {
   display: inline-block;
+<<<<<<< HEAD
   border: 1px solid black;
   width: 20%;
   background-color: white;
