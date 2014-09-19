@@ -2,6 +2,10 @@ form {
   text-align: center;
 }
 
+body {
+  background-color: eggshell;
+}
+
 div img {
     display: block;
     margin-left: auto;

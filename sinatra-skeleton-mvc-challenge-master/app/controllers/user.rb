@@ -13,6 +13,7 @@ end
 post '/signup' do
   @user = User.create(full_name: params[:full_name], password: params[:password])
   session[:user_id] = @user.id
+  @user.followees << @user
   redirect "/dashboard/#{@user.id}"
 end
 
