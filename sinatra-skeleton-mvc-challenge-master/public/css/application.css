@@ -93,6 +93,12 @@ div h1 {
   color: #00A6CF;
   border-radius: 5px;
 }
+
+.followee_column img {
+  width: 120px;
+  height: auto;
+}
+
 .signup input[type="text"] {
   border: 4px solid #D4E6E6;
   margin: 5px;

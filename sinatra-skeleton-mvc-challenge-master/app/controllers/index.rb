@@ -4,6 +4,8 @@ get '/dashboard/:user_id' do
   if signed_in?
     @user = User.find(params[:user_id])
 
+    @followees = @user.followees - [@user]
+
     @all_blahs = []
     @user.followees.each do |follower|
       follower.blahs.each do |blah|
