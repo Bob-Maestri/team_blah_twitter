@@ -23,6 +23,10 @@ post '/signup' do
     end
 end
 
+get '/dashboard/' do
+  redirect '/'
+end
+
 post '/login' do
   session[:error] = nil if !session[:error]
   @user = User.find_by(full_name: params[:full_name] )

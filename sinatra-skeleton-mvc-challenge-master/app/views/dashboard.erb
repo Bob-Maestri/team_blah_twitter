@@ -14,7 +14,7 @@
   <div class ="followee_column">
 
     <% if @followees %>
-    <h2>Following...</h2>
+    <h2>Following</h2>
     <% @followees.each do |followee| %>
       <div class ="followee_box">
       <p><a href="/profile/<%= followee.id %>"><%= followee.full_name %></a></p>

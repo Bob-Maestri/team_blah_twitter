@@ -20,7 +20,11 @@
 <body>
   <style>
     body {
-      background-image: url("http://i.imgur.com/i2I4LQh.jpg");
+      background: url(http://i.imgur.com/i2I4LQh.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
     }
     </style>
   <%= yield %>

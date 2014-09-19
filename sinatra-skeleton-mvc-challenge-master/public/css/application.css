@@ -201,6 +201,7 @@ div h1 {
   background-color: white;
   border-radius: 5px;
   padding-bottom: 20px;
+  margin-top: 5px;
 }
 
 .followee_column input[type="submit"] {
@@ -223,6 +224,7 @@ div h1 {
   background-color: black;
   color: #00A6CF;
   border-radius: 5px;
+  margin-top: 15px;
 }
 
 .right_column {
