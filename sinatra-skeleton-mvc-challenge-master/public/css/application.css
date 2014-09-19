@@ -2,6 +2,10 @@ form {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+}
+
 .nav_bar {
   margin-top: -15px;
   height: 6vh;
@@ -33,16 +37,6 @@ form {
 
 .logout_link {
   margin-right: 5%;
-}
-
-.name_box {
-  margin-top: -20px;
-  font-family: Garamond;
-}
-
-.name_box h2 {
-  font-size: 3em;
-  color: black;
 }
 
 .blahber_monster {
@@ -80,8 +74,6 @@ div h1 {
     margin-bottom: 0;
     text-shadow: 3px 3px purple;
 }
-
-
 
 .login {
   display: inline-block;
@@ -121,7 +113,7 @@ div h1 {
   width: 75%;
 }
 
-.followee_column img {
+.name_box img {
   width: 120px;
   height: auto;
 }
@@ -176,16 +168,36 @@ div h1 {
   text-align: center;
   border: 1px solid black;
   padding-bottom: 20px;
-  background-color: #00A6CF;
+  padding-top: 10px;
+  background-color: rgba(0,166,207,0.2);
   margin-top: 5%;
   margin-bottom: 5%;
   box-shadow: 10px 10px black;
+ /* opacity: 0.9;*/
+}
+
+.left_column {
+  width: 20%;
+  display: inline-block;
+}
+
+.name_box {
+  border: 1px solid black;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  padding-bottom: 20px;
+  height: 100%;
+}
+
+.name_box h2 {
+  font-size: 1em;
+  color: black;
 }
 
 .followee_column {
-  display: inline-block;
   border: 1px solid black;
-  width: 20%;
+  width: 100%;
   background-color: white;
   border-radius: 5px;
   padding-bottom: 20px;
