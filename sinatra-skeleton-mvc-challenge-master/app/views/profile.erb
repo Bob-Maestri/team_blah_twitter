@@ -42,8 +42,8 @@
   <% if @other_users %>
     <% @other_users.each do |user| %>
       <p><a href="/profile/<%= user.id %>"><%= user.full_name %></a>
-        <form action="/profile/<%= @user.id %>/follow/<%= user.id %>">
-          <input class="small_button" type="submit" value="Follow">
+        <form action="/profile/<%= @user.id %>/follow/<%= user.id %>" method="post">
+          <input class="small_button" type="submit" value="Follow Me!">
         </form>
       </p>
     <% end %>
