@@ -37,8 +37,4 @@ post '/dashboard/:user_id/unfollow/:other_id' do
 end
 
 
-# get '/profile/:user_id' do
-#   erb :profile
-# end
-
 
