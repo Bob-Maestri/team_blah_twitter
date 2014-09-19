@@ -30,3 +30,10 @@ post '/profile/new_blah/:user_id' do
   @user.blahs.create(content: params[:content])
   redirect "/profile/#{@user.id}"
 end
+
+get '/profile/:blah_id/delete_blah' do
+  @blah = Blah.find(params[:blah_id])
+  @user = @blah.user
+  @blah.delete
+  redirect "/profile/#{@user.id}"
+end

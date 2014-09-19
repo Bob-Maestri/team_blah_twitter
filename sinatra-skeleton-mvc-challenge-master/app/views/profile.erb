@@ -9,7 +9,7 @@
   <div class="container">
     <p>Blah!</p>
     <form action="/profile/new_blah/<%= @user.id %>" method="post">
-      <input type="text" name="content" placeholder="Blahbity Blahbity!"><br>
+      <input type="text" name="content" placeholder="Blahbity Blahbity!">
       <input type="submit" value="Blah">
     </form>
   </div>
@@ -41,6 +41,9 @@
       <% @user.blahs.each do |blah| %>
         <%= blah.content %><br>
         <p>posted by <%= @user.full_name %> at <%= blah.created_at %></p>
+        <% if session[:user_id] == @user.id %>
+          <p><a href="/profile/<%= blah.id %>/delete_blah">Delete</a></p>
+        <% end %>
       <% end %>
     <% end %>
   </p>
@@ -60,5 +63,10 @@
 <% end %>
 
 <div class="footer">
-  <a href="/dashboard/<%= @user.id %>"><%= @user.full_name %>'s Blahboard</a>
+  <a href="/dashboard/<%= @user.id %>"><%= @user.full_name %>'s Blahboard</a><br><br>
+  <% if session[:user_id] == @user.id %>
+    <a href="/logout">Logout</a>
+  <% else %>
+    <a href="/">Home</a>
+  <% end %>
 </div>
