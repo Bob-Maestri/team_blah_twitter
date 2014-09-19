@@ -22,13 +22,10 @@
       </p>
     <br><br>
     <% if session[:user_id] == @user.id %>
-      <p>Edit About Me</p><br><br>
-      <p>
-        <form action="/profile/<%= @user.id %>/edit" method="post">
-          <input type="text" name="about_me" placeholder="Edit About Me"><br>
-          <input type="submit" value="Edit">
-        </form>
-      </p>
+      <form action="/profile/<%= @user.id %>/edit" method="post">
+        <input type="text" name="about_me" placeholder="Edit About Me"><br>
+        <input type="submit" value="Edit">
+      </form>
     <% end %>
   </div>
 
