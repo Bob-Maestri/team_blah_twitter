@@ -6,6 +6,7 @@ get '/profile/:user_id' do
   @email_address = @user[:email].downcase
   @hash = Digest::MD5.hexdigest(@email_address)
   @image_src = "http://www.gravatar.com/avatar/#{@hash}"
+  @search_results = User.where("full_name LIKE '#{params[:search]}'")
   erb :profile
 end
 
