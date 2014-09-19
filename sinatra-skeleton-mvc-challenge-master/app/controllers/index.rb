@@ -17,7 +17,7 @@ end
   @sorted_blahs = @wall_blahs.reverse
 
   @other_users = (User.all - @user.followees).sample(10)
-
+  @image_src = "http://www.gravatar.com/avatar/#{@hash}"
   erb :dashboard
   end
 end

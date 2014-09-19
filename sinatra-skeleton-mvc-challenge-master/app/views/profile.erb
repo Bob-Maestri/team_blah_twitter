@@ -4,19 +4,15 @@
 
 <div class = "page_wrap">
 
+<div class = "left_column">
   <div class="name_box">
     <h2><%= @user.full_name %></h2>
+    <img src=<%="#{@image_src}" << "?d=http://i.imgur.com/tlOPBv9.jpg" << "?s=120"%>><br><br>
   </div>
-
-  <% if session[:user_id] == @user.id %>
-    <div class="container">
-      <%= erb :blah_input %>
-    </div>
-  <% end %>
 
   <div class="followee_column">
       <p>About Me</p>
-      <img src=<%="#{@image_src}" << "?d=http://i.imgur.com/tlOPBv9.jpg" << "?s=120"%>><br><br>
+
       <p>
         <%= @user.about_me %>
       </p>
@@ -28,12 +24,18 @@
       </form>
     <% end %>
   </div>
-
+</div>
 
 
    <div class="blah_feed">
     <p>
       <h3>Blah Wall...</h3>
+      <br>
+      <% if session[:user_id] == @user.id %>
+        <div class="container">
+          <%= erb :blah_input %>
+        </div>
+      <% end %>
       <% if @user.blahs %>
         <% @user.blahs.order(created_at: :desc).each do |blah| %>
           <%= blah.content %><br>
