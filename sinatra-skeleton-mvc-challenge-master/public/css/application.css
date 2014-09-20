@@ -63,6 +63,13 @@ a:hover {
 .blah_post {
   border-top: 1px solid black;
   padding-top: 5px;
+
+}
+
+.blah_post:hover {
+  border-top: 1px solid black;
+  padding-bottom: 0.1px;
+  background-color: #F5F5F5;
 }
 
 div img {

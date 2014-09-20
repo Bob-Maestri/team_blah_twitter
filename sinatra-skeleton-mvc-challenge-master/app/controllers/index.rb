@@ -17,7 +17,8 @@ get '/dashboard/:user_id' do
 
   @wall_blahs = @all_blahs.sort_by {|blah| blah.created_at }
   @sorted_blahs = @wall_blahs.reverse
-
+  @email_address = @user[:email].downcase
+  @hash = Digest::MD5.hexdigest(@email_address)
   @other_users = (User.all - @user.followees).sample(10)
   @image_src = "http://www.gravatar.com/avatar/#{@hash}"
   erb :dashboard
