@@ -26,9 +26,14 @@ end
 
 post '/dashboard/:id/blah' do
   if signed_in?
+    if params[:content].length > 140
+      @user = User.find(params[:id])
+      redirect "/dashboard/#{@user.id}"
+    else
     @user = User.find(params[:id])
     @user.blahs.create(content: params[:content])
     redirect "/dashboard/#{@user.id}"
+  end
   end
 end
 
