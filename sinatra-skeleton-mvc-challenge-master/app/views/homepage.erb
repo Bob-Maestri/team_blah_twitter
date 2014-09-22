@@ -1,6 +1,8 @@
+<!-- don't need <html> tags; those are supplied via the layout -->
 <!DOCTYPE html>
 <html lang="en">
 
+  <!-- lines 5-17 are redundant; all supplied via layout -->
   <head>
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -15,6 +17,7 @@
   </head>
 
   <body>
+    <!-- style tag cannot be within body -->
     <style>
       body {
         background-color: white;
@@ -28,6 +31,7 @@
         <div class="login">
           <form action="/login" method="post">
             <p1>LOGIN</p1><br><br>
+            <!-- labels on form elements -->
             <input type="text" name="full_name" placeholder="Full Name"><br>
             <input type="password" name="password" placeholder="Password"><br>
             <input type="submit" value="Submit">

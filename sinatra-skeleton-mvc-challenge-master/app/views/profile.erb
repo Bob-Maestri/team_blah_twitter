@@ -1,4 +1,5 @@
 <div>
+  <!-- nice! -->
   <%= erb :nav_bar %>
 </div>
 
@@ -7,8 +8,10 @@
 <div class = "left_column">
   <div class="name_box">
     <h2><%= @user.full_name %></h2>
+    <!-- what on earth is going on here? -->
     <img src=<%="#{@image_src}" << "?d=http://i.imgur.com/tlOPBv9.jpg" %>><br><br>
   </div>
+  <!-- ?? -->
   <% if session[:user_id] == @user.id %>
   <% end %>
 
@@ -22,6 +25,7 @@
     <br><br>
     <% if session[:user_id] == @user.id %>
       <form action="/profile/<%= @user.id %>/edit" method="post">
+        <!-- labels on form elements -->
         <input type="text" name="about_me" placeholder="Edit About Me"><br>
         <input type="submit" value="Edit">
       </form>
@@ -55,6 +59,7 @@
   <% if session[:user_id] == @user.id %>
   <div class ="right_column">
     <form action="/profile/<%= @user.id %>/search" method="post">
+      <!-- labels on form elements -->
       <input type="text" name="search">
       <input type="submit" value="Search!">
     </form>
