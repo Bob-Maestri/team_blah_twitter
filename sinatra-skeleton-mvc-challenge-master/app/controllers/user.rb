@@ -2,16 +2,19 @@ get '/' do
   erb :homepage, layout: false
 end
 
+# empty?
 post '/' do
 end
 
 get '/logout' do
+  # nice!
   session.clear
   redirect '/'
 end
 
 post '/signup' do
   @all_users = User.all
+    # nice quick validation step!
     @new_user = @all_users.find_by(full_name: params[:full_name] )
     if @new_user != nil
       redirect '/'

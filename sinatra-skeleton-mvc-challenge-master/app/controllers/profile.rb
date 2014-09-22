@@ -17,6 +17,7 @@ post '/profile/:user_id/follow/:other_id' do
   redirect "/profile/#{@user1.id}"
 end
 
+# updating user info could also be a PUT request
 post '/profile/:user_id/edit' do
   @user = User.find(params[:user_id])
   @user.about_me = params[:about_me]
@@ -30,12 +31,14 @@ post '/profile/:user_id/unfollow/:other_id' do
   redirect "/profile/#{@user.id}"
 end
 
+# doesn't follow the noun/id pair convention
 post '/profile/new_blah/:user_id' do
   @user = User.find(params[:user_id])
   @user.blahs.create(content: params[:content])
   redirect "/profile/#{@user.id}"
 end
 
+# deleting an item should use the DELETE verb, not a GET route
 get '/profile/:blah_id/delete_blah' do
   @blah = Blah.find(params[:blah_id])
   @user = @blah.user

@@ -1,9 +1,11 @@
-
-
+# could the user id be dropped from this URL somehow?
 get '/dashboard/:user_id' do
+  # sort of weird to check for signed-in-ness BEFORE having the user's info;
+  #  maybe make it all available as part of a helper?
   if signed_in?
     @user = User.find(params[:user_id])
 
+    # what's going on here?
     @followees = @user.followees - [@user]
 
     @all_blahs = []
@@ -13,6 +15,7 @@ get '/dashboard/:user_id' do
      end
     end
 
+  # shouldn't be any puts statements in production-ready code
   p @search_results = User.where("full_name LIKE '#{params[:search]}'")
 
   @wall_blahs = @all_blahs.sort_by {|blah| blah.created_at }
@@ -25,10 +28,13 @@ get '/dashboard/:user_id' do
   end
 end
 
+# a blah is not a product of a dashboard; should probably look more like
+#  POST '/users/:id/blah'
 post '/dashboard/:id/blah' do
   if signed_in?
     if params[:content].length > 140
       @user = User.find(params[:id])
+      # that's some pretty harsh validation!
       redirect "/dashboard/#{@user.id}"
     else
     @user = User.find(params[:id])
@@ -38,6 +44,8 @@ post '/dashboard/:id/blah' do
   end
 end
 
+# the following 2 routes could alternatively look like POST/DELETE to:
+#  '/dashboard/:user_id/followers/:other_id'
 post '/dashboard/:user_id/follow/:other_id' do
   @user1 = User.find(params[:user_id])
   @user2 = User.find(params[:other_id])
