@@ -1,7 +1,9 @@
+/* rule is too general! use classes! */
 form {
   text-align: center;
 }
 
+/* rule is too general! use classes! */
 a {
   text-decoration: none;
 }
@@ -23,6 +25,7 @@ a:hover {
 
 .nav_bar {
   margin-top: -15px;
+  /* not a valid unit of measurement...? */
   height: 6vh;
   background-color: black;
   width: 100%;
@@ -33,6 +36,7 @@ a:hover {
 }
 
 .logo {
+  /* not a declared font family? */
   font-family: TOXIA;
   margin-left: 20px;
   display: inline-block;
@@ -74,6 +78,7 @@ a:hover {
 
 div img {
     display: block;
+    /* use margin shorthand */
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0;
@@ -101,6 +106,7 @@ div h1 {
     font-family: TOXIA;
     font-size: 8em;
     margin-bottom: 0;
+    /* text-shadow is not supported cross-browser */
     text-shadow: 3px 3px purple;
 }
 
@@ -119,6 +125,7 @@ div h1 {
 .signup input[type="submit"] {
   background-color: black;
   color: #00A6CF;
+  /* border-radius is not supported cross-browser */
   border-radius: 5px;
 }
 
@@ -203,8 +210,10 @@ div h1 {
   margin: auto;
   text-align: center;
   border: 1px solid black;
+  /* use padding and margin shorthand */
   padding-bottom: 20px;
   padding-top: 10px;
+  /* rgba is not supported cross-browser */
   background-color: rgba(0,166,207,0.2);
   margin-top: 5%;
   margin-bottom: 5%;
